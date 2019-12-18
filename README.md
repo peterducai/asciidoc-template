@@ -9,7 +9,9 @@ In this tutorial we will run asciidoc in container which will generate PDF that 
 2. build container
 
 > cd asciidoc-template
+
 > chmod +x scripts/journal.sh
+
 > ./scripts/journal.sh
 
 3. run container
@@ -31,10 +33,10 @@ liberation-serif
 
 
 
-<!-- podman run -v .:/workdir:Z localhost/pducai/journal asciidoctor-pdf journal.adoc
+podman run -v .:/workdir:Z localhost/pducai/journal asciidoctor-pdf journal.adoc
 
 podman run --security-opt label=disable -v .:/workdir localhost/pducai/journal ls /workdir
 
 > chcon -R system_u:object_r:container_file_t:s0 /tmp/pavucontrol-container/
 
-> chcon -Rt svirt_sandbox_file_t /var/data --> -->
+> chcon -Rt svirt_sandbox_file_t /var/data --> 

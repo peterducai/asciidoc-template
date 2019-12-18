@@ -9,7 +9,7 @@ In this tutorial we will run asciidoc in container which will generate PDF that 
 2. build container
 
 > cd asciidoc-template
-> 
+> chmod +x scripts/journal.sh
 > ./scripts/journal.sh
 
 3. run container

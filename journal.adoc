@@ -13,14 +13,15 @@ YOURNAME <yourname@youremail.com>
 :icons: font
 :pdf-page-size: A4
 :pdf-style: my
-:pdf-fontsdir: /workdir/assets/fonts
+:pdf-fontsdir: /usr/share/fonts/liberation/
 :pdf-stylesdir: /workdir/assets/style
 ifdef::backend-pdf[]
 :source-highlighter: rouge
 :rouge-style: github
 endif::[]
 :revnumber: 0.2
-//A simple http://asciidoc.org[AsciiDoc] document.
+// A simple http://asciidoc.org[AsciiDoc] document.
+// vim: set syntax=asciidoc:
 
 == History and Revisions
 
@@ -76,22 +77,25 @@ Provide a glossary for terminology that may not be common knowledge with the int
 
 == OCI 
 
-The Open Container Initiative (OCI) is open governance body formed by Docker and other container leaders under the auspices of the Linux Foundation, for the purpose of creating open industry standards around container formats and runtimes. Currently this standard contains two specifications, the Runtime Specification and the Image Specification (image-spec).
+Long before Open Container Initiative (OCI) was created there were many different container runtimes, each with it's own specification. The OCI was created as open governance body formed by Docker and other container leaders under the auspices of the Linux Foundation, for the purpose of creating unified open industry standard. Currently this standard contains the Runtime Specification and the Image Specification (image-spec).
 
 == Buildah and Podman overview
 
 === Buildah
 
-The Buildah package provides a command line tool that can be used to
+The Buildah is CLI tool to create container. You can either start from scratch or use existing image from image registries like docker.com, quay.io or redhat.com. In our case we're using Fedora image which is served by docker.com
 
-* create a working container, either from scratch or using an image as a starting point
-* create an image, either from a working container or via the instructions in a Dockerfile
+```sh
+ctr1=$(buildah from "${1:-fedora}")
+```
+
+
+
 * images can be built in either the OCI image format or the traditional upstream docker * image format
-* mount a working container's root filesystem for manipulation
-* unmount a working container's root filesystem
+* mount and umount working container's root filesystem for manipulation
+
 * use the updated contents of a container's root filesystem as a filesystem layer to create * a new image
-* delete a working container or an image
-* rename a local container
+
 
 === Podman
 
@@ -99,7 +103,15 @@ Podman is a daemonless container engine for developing, managing, and running OC
 
 === Comparison
 
+Buildah specializes in building OCI images and can replicate all of the commands that are found in a Dockerfile. This allows building images with and without Dockerfiles while not requiring any root privileges. 
 
+Podman specializes in all of the commands and functions that help you to maintain and modify OCI images, such as pulling and tagging. It also allows you to create, run, and maintain those containers created from those images. For building container images via Dockerfiles, Podman uses Buildah's golang API and can be installed independently from Buildah.
+
+A major difference between Podman and Buildah is their concept of a container. Podman allows users to create "traditional containers" where the intent of these containers is to be long lived. While Buildah containers are really just created to allow content to be added back to the container image. An easy way to think of it is the buildah run command emulates the RUN command in a Dockerfile while the podman run command emulates the docker run command in functionality. Because of this and their underlying storage differences, you can not see Podman containers from within Buildah or vice versa.
+
+In short, Buildah is an efficient way to create OCI images while Podman allows you to manage and maintain those images and containers in a production environment using familiar container cli commands. For more details, see the Container Tools Guide.
+
+Let's take a look at our script called journal.sh
 
 ```sh
 #!/bin/bash
@@ -120,31 +132,3 @@ buildah config --annotation "com.example.build.host=$(uname -n)" "$ctr1"
 ## Commit this container to an image name
 buildah commit "$ctr1" "${2:-$USER/journal}"
 ```
-
-Buildah specializes in building OCI images. Buildah's commands replicate all of the commands that are found in a Dockerfile. This allows building images with and without Dockerfiles while not requiring any root privileges. Buildah’s ultimate goal is to provide a lower-level coreutils interface to build images. The flexibility of building images without Dockerfiles allows for the integration of other scripting languages into the build process. Buildah follows a simple fork-exec model and does not run as a daemon but it is based on a comprehensive API in golang, which can be vendored into other tools.
-
-Podman specializes in all of the commands and functions that help you to maintain and modify OCI images, such as pulling and tagging. It also allows you to create, run, and maintain those containers created from those images. For building container images via Dockerfiles, Podman uses Buildah's golang API and can be installed independently from Buildah.
-
-A major difference between Podman and Buildah is their concept of a container. Podman allows users to create "traditional containers" where the intent of these containers is to be long lived. While Buildah containers are really just created to allow content to be added back to the container image. An easy way to think of it is the buildah run command emulates the RUN command in a Dockerfile while the podman run command emulates the docker run command in functionality. Because of this and their underlying storage differences, you can not see Podman containers from within Buildah or vice versa.
-
-In short, Buildah is an efficient way to create OCI images while Podman allows you to manage and maintain those images and containers in a production environment using familiar container cli commands. For more details, see the Container Tools Guide.
-
-=== Secondary Objectives
-
-
-```cpp
-    #include <iostream>
-    using namespace std;
-    int main() 
-    {    
-        cout << "Size of char: " << sizeof(char) << " byte" << endl;
-        cout << "Size of int: " << sizeof(int) << " bytes" << endl;
-        cout << "Size of float: " << sizeof(float) << " bytes" << endl;
-        cout << "Size of double: " << sizeof(double) << " bytes" << endl;
-        return 0;
-    }
-```
-
-
-
-// vim: set syntax=asciidoc:

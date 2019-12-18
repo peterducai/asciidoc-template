@@ -2,34 +2,34 @@ font:
   heading_margin_top: 1
   catalog:
     # Noto Serif supports Latin, Latin-1 Supplement, Latin Extended-A, Greek, Cyrillic, Vietnamese & an assortment of symbols
-    Noto Serif:
-      normal: notoserif-regular-subset.ttf
-      bold: notoserif-bold-subset.ttf
-      italic: notoserif-italic-subset.ttf
-      bold_italic: notoserif-bold_italic-subset.ttf
+    # Noto Serif:
+    #   normal: notoserif-regular-subset.ttf
+    #   bold: notoserif-bold-subset.ttf
+    #   italic: notoserif-italic-subset.ttf
+    #   bold_italic: notoserif-bold_italic-subset.ttf
     # M+ 1mn supports ASCII and the circled numbers used for conums
     M+ 1mn:
-      normal: mplus1mn-regular-ascii-conums.ttf
-      bold: mplus1mn-bold-ascii.ttf
-      italic: mplus1mn-italic-ascii.ttf
-      bold_italic: mplus1mn-bold_italic-ascii.ttf
+      normal: LiberationSans-Regular.ttf
+      italic: LiberationSans-Italic.ttf
+      bold:   LiberationSans-Bold.ttf
+      bold_italic: LiberationSans-BoldItalic.ttf
     # M+ 1p supports Latin, Latin-1 Supplement, Latin Extended, Greek, Cyrillic, Vietnamese, Japanese & an assortment of symbols
     # It also provides arrows for ->, <-, => and <= replacements in case these glyphs are missing from font
     M+ 1p Fallback:
-      normal: mplus1p-regular-fallback.ttf
-      bold: mplus1p-regular-fallback.ttf
-      italic: mplus1p-regular-fallback.ttf
-      bold_italic: mplus1p-regular-fallback.ttf
+      normal: LiberationSans-Regular.ttf
+      italic: LiberationSans-Italic.ttf
+      bold:   LiberationSans-Bold.ttf
+      bold_italic: LiberationSans-BoldItalic.ttf
     Liberation Sans:
       normal: LiberationSans-Regular.ttf
       italic: LiberationSans-Italic.ttf
       bold:   LiberationSans-Bold.ttf
       bold_italic: LiberationSans-BoldItalic.ttf
-    RedHatText:
-      normal: RedHatText-Regular.ttf
-      bold: RedHatText-Bold.ttf
-      italic: RedHatText-RegularItalic.ttf
-      bold_italic: RedHatText-BoldItalic.ttf
+    # RedHatText:
+    #   normal: RedHatText-Regular.ttf
+    #   bold: RedHatText-Bold.ttf
+    #   italic: RedHatText-RegularItalic.ttf
+    #   bold_italic: RedHatText-BoldItalic.ttf
   fallbacks:
     - M+ 1p Fallback
 page:
@@ -49,7 +49,7 @@ base:
   # color as CMYK array (approximated)
   #font_color: [0, 0, 0, 0.92]
   #font_color: [0, 0, 0, 92%]
-  font_family: RedHatText
+  font_family: Liberation Sans
   # choose one of these font_size/line_height_length combinations
   #font_size: 14
   #line_height_length: 20

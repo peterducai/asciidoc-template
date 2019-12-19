@@ -107,9 +107,7 @@ Buildah specializes in building OCI images and can replicate all of the commands
 
 Podman specializes in all of the commands and functions that help you to maintain and modify OCI images, such as pulling and tagging. It also allows you to create, run, and maintain those containers created from those images. For building container images via Dockerfiles, Podman uses Buildah's golang API and can be installed independently from Buildah.
 
-A major difference between Podman and Buildah is their concept of a container. Podman allows users to create "traditional containers" where the intent of these containers is to be long lived. While Buildah containers are really just created to allow content to be added back to the container image. An easy way to think of it is the buildah run command emulates the RUN command in a Dockerfile while the podman run command emulates the docker run command in functionality. Because of this and their underlying storage differences, you can not see Podman containers from within Buildah or vice versa.
-
-In short, Buildah is an efficient way to create OCI images while Podman allows you to manage and maintain those images and containers in a production environment using familiar container cli commands. For more details, see the Container Tools Guide.
+A major difference between Podman and Buildah is their concept of a container. In short, Buildah is an efficient way to create OCI images while Podman allows you to manage and maintain those images and containers in a production environment using familiar container cli commands.
 
 Let's take a look at our script called journal.sh
 

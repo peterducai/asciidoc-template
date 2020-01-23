@@ -9,22 +9,22 @@ font:
     #   bold_italic: notoserif-bold_italic-subset.ttf
     # M+ 1mn supports ASCII and the circled numbers used for conums
     M+ 1mn:
-      normal: LiberationSans-Regular.ttf
-      italic: LiberationSans-Italic.ttf
-      bold:   LiberationSans-Bold.ttf
-      bold_italic: LiberationSans-BoldItalic.ttf
+      normal: RedHatDisplay-Regular.ttf
+      italic: RedHatDisplay-Italic.ttf
+      bold:   RedHatDisplay-Bold.ttf
+      bold_italic: RedHatDisplay-BoldItalic.ttf
     # M+ 1p supports Latin, Latin-1 Supplement, Latin Extended, Greek, Cyrillic, Vietnamese, Japanese & an assortment of symbols
     # It also provides arrows for ->, <-, => and <= replacements in case these glyphs are missing from font
     M+ 1p Fallback:
-      normal: LiberationSans-Regular.ttf
-      italic: LiberationSans-Italic.ttf
-      bold:   LiberationSans-Bold.ttf
-      bold_italic: LiberationSans-BoldItalic.ttf
+      normal: RedHatDisplay-Regular.ttf
+      italic: RedHatDisplay-Italic.ttf
+      bold:   RedHatDisplay-Bold.ttf
+      bold_italic: RedHatDisplay-BoldItalic.ttf
     Liberation Sans:
-      normal: LiberationSans-Regular.ttf
-      italic: LiberationSans-Italic.ttf
-      bold:   LiberationSans-Bold.ttf
-      bold_italic: LiberationSans-BoldItalic.ttf
+      normal: RedHatDisplay-Regular.ttf
+      italic: RedHatDisplay-Italic.ttf
+      bold:   RedHatDisplay-Bold.ttf
+      bold_italic: RedHatDisplay-BoldItalic.ttf
     # RedHatText:
     #   normal: RedHatText-Regular.ttf
     #   bold: RedHatText-Bold.ttf

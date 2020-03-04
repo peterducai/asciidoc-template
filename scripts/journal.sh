@@ -4,7 +4,7 @@ ctr1=$(buildah from "${1:-fedora}")
 
 ## Get all updates and install ruby
 buildah run "$ctr1" -- dnf update -y
-buildah run "$ctr1" -- dnf install -y rubygems liberation-fonts-common liberation-sans-fonts
+buildah run "$ctr1" -- dnf install -y rubygems liberation-fonts-common liberation-sans-fonts redhat-display-fonts redhat-text-fonts
 buildah run "$ctr1" -- gem install asciidoctor
 buildah run "$ctr1" -- gem install --pre asciidoctor-pdf
 buildah run "$ctr1" -- gem install coderay pygments.rb rouge

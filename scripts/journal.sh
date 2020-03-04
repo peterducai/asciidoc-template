@@ -14,7 +14,7 @@ buildah run "$ctr1" -- mkdir -p /workdir
 buildah config --annotation "com.example.build.host=$(uname -n)" "$ctr1"
 
 ## Commit this container to an image name
-buildah commit "$ctr1" "${2:-$USER/journal}"
+buildah commit "$ctr1" "${2:-$USER/asciidoctor-journal}"
 
 
 

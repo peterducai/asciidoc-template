@@ -13,8 +13,8 @@ YOURNAME <yourname@youremail.com>
 :icons: font
 :pdf-page-size: A4
 :pdf-style: my
-// :pdf-fontsdir: /usr/share/fonts/redhat/
-:pdf-fontsdir: /workdir/redhat/
+:pdf-fontsdir: /usr/share/fonts/redhat/
+// :pdf-fontsdir: /workdir/redhat/
 :pdf-stylesdir: /workdir/assets/style
 ifdef::backend-pdf[]
 :source-highlighter: rouge

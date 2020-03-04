@@ -16,7 +16,9 @@ In this tutorial we will run asciidoc in container which will generate PDF that 
 
 3. run container
 
-> podman run -v .:/workdir:Z localhost/pducai/journal asciidoctor-pdf journal.adoc
+<!-- > podman run -v .:/workdir:Z localhost/${USER}/asciidoctor-journal asciidoctor-pdf journal.adoc -->
+
+> podman run -v .:/workdir:Z localhost/${USER}/asciidoctor-journal asciidoctor-pdf /workdir/journal.adoc
 
 and this will generate PDF with tutorial. Now you can read and learn how all this works :)
 

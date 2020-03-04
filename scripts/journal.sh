@@ -15,3 +15,8 @@ buildah config --annotation "com.example.build.host=$(uname -n)" "$ctr1"
 
 ## Commit this container to an image name
 buildah commit "$ctr1" "${2:-$USER/journal}"
+
+
+
+# sudo yum install redhat-display-fonts redhat-text-fonts
+# Note that Red Hat Enterprise Linux/CentOS users will need to enable Fedora EPEL first.
